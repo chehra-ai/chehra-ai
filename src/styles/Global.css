@@ -1,0 +1,21 @@
+/* Variable Declaration */
+:root {
+}
+
+/* CSS Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    /* 1 Rem = 10px */
+    font-size: 62.5%;
+}
+
+body {
+    
+}
