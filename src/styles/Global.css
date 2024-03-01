@@ -42,3 +42,74 @@ body {
   background-color: var(--color-secondary);
   overflow-x: hidden;
 }
+
+p {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  font-family: var(--font-primary);
+  letter-spacing: 0px;
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: 10rem;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 3.6rem;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+h5 {
+}
+
+h6 {
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Image Reset */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Form Components */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
