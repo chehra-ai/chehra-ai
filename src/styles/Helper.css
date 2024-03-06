@@ -4,15 +4,15 @@
 }
 
 .m-small {
-    margin: 0.3rem;
+    margin: 0.4rem;
 }
 
 .m-medium {
-    margin: 0.6rem;
+    margin: 1.2rem;
 }
 
 .m-large {
-    margin: 1rem;
+    margin: 4rem;
 }
 /* Top Margins */
 .mt-zero {
@@ -20,15 +20,15 @@
 }
 
 .mt-small {
-    margin-top: 0.3rem;
+    margin-top: 0.4rem;
 }
 
 .mt-medium {
-    margin-top: 0.6rem;
+    margin-top: 1.2rem;
 }
 
 .mt-large {
-    margin-top: 1rem;
+    margin-top: 4rem;
 }
 /* Bottom Margins */
 .mb-zero {
@@ -36,15 +36,15 @@
 }
 
 .mb-small {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
 }
 
 .mb-medium {
-    margin-bottom: 0.6rem;
+    margin-bottom: 1.2rem;
 }
 
 .mb-large {
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
 }
 /* Left Margins */
 .ml-zero {
@@ -52,15 +52,15 @@
 }
 
 .ml-small {
-    margin-left: 0.3rem;
+    margin-left: 0.4rem;
 }
 
 .ml-medium {
-    margin-left: 0.6rem;
+    margin-left: 1.2rem;
 }
 
 .ml-large {
-    margin-left: 1rem;
+    margin-left: 4rem;
 }
 /* Right Margins */
 .mr-zero {
@@ -68,13 +68,13 @@
 }
 
 .mr-small {
-    margin-right: 0.3rem;
+    margin-right: 0.4rem;
 }
 
 .mr-medium {
-    margin-right: 0.6rem;
+    margin-right: 1.2rem;
 }
 
 .mr-large {
-    margin-right: 1rem;
+    margin-right: 4rem;
 }

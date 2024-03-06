@@ -1,30 +1,81 @@
 /* Css Code for Authentication.jsx */
+/* 
+.auth {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient( 90deg,
+  #ffffff00 0%,
+  #1c1c1c91 100%
+  ), url('../../../public/3.png');
+  display: grid;
+  background-size: cover;
+  grid-template-columns: repeat(2, 1fr);
+} */
+
 
 .auth {
   width: 100%;
   height: 100vh;
   background-image: linear-gradient( 90deg,
-    var(--color-tertiary) 0%,
-    var(--color-tertiary) 70%,
-    var(--color-primary) 70%,
-    var(--color-primary) 100%
-  );
+  var(--color-tertiary) 0%,
+  var(--color-tertiary) 70%,
+  var(--color-purple) 70%,
+  var(--color-purple) 100%
+  ), url('../../../public/3.png');
   display: grid;
+  background-size: cover;
   grid-template-columns: repeat(2, 1fr);
 }
-.authLeft, 
+
 .authRight {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.authLeft {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.authImg {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 3rem;
+}
+.authHeader {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+}
+.logoText {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--color-purple);
+}
 .authFormContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: var(--color-secondary);
-    width: 50%;
-    height: 60%;
+    flex-direction: column;
+    background-color: var(--color-white);
+    width: 70%;
+    height: 70%;
     border-radius: 0.4rem;
     box-shadow: 0 10px 200px -101px var(--color-black);
+    padding: 2.2rem 4rem;
+    margin: 0;
+}
+
+.authForm {
+  margin: 2rem 0;
+}
+
+.marketingContainer {
+  min-width: 80%;
+  color: var(--color-white);
+}
+.marketingContainer > h1 {
+  color: var(--color-white);
 }
