@@ -1,0 +1,17 @@
+.img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 3rem;
+}
+.logoDiv {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+}
+.logoText {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--color-purple);
+}
