@@ -12,6 +12,12 @@
 }
 .logoText {
   font-size: 2.3rem;
-  font-weight: 700;
+  font-weight: 700; 
+}
+.logoDark {
   color: var(--color-purple);
+}
+
+.logoLight {
+  color: var(--color-white);
 }

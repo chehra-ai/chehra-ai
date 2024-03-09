@@ -1,9 +1,7 @@
 .button {
     width: 100%;
-    background-color: var(--color-purple); /* Green */
     border: none;
     border-radius: 0.5rem;
-    color: white;
     padding: 1rem 2rem;
     text-align: center;
     text-decoration: none;
@@ -12,6 +10,16 @@
     margin: 1.4rem 0;
     transition-duration: 0.4s;
     cursor: pointer;
+}
+
+.buttonLight {
+    background-color: var(--color-white);
+    color: var(--color-purple);
+}
+
+.buttonDark {
+    background-color: var(--color-purple);
+    color: var(--color-white);
 }
 
 .button > p {
