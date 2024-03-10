@@ -10,6 +10,10 @@ const Authentication = () => {
       {/* Left Container */}
       <div className={classes.authLeft}>
         <div className={classes.marketingContainer}>
+          {/* <h1>Let's</h1>
+          <h2>AI-magine</h2>
+          <h3>Your Virtual Stardom!</h3>
+          <img src="/5957516.png"/> */}
         </div>
       </div>
       {/* Right Container */}
