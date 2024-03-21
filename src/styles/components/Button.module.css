@@ -14,11 +14,11 @@
 
 .buttonLight {
     background-color: var(--color-white);
-    color: var(--color-purple);
+    color: var(--color-secondary);
 }
 
 .buttonDark {
-    background-color: var(--color-purple);
+    background-color: var(--color-primary);
     color: var(--color-white);
 }
 

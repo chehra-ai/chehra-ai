@@ -15,7 +15,7 @@
   font-weight: 700; 
 }
 .logoDark {
-  color: var(--color-purple);
+  color: var(--color-primary);
 }
 
 .logoLight {

@@ -1,5 +1,5 @@
 .App {
-    background-color: var(--color-purple);
+    background-color: var(--color-secondary);
     height: 100vh;
     overflow-y: hidden;
 }
