@@ -2,6 +2,7 @@ import React from "react";
 import classes from "styles/pages/Authentication.module.css";
 import TextInput from "components/TextInput";
 import Button from "components/Button";
+import Logo from "components/Logo";
 
 const Authentication = () => {
   return (
@@ -14,14 +15,7 @@ const Authentication = () => {
       {/* Right Container */}
       <div className={classes.authRight}>
         <div className={classes.authFormContainer}>
-          <div className={classes.authHeader}>
-            <img
-              src="/logo.png"
-              className={classes.authImg}
-              alt="Chehra.ai Logo"
-            />
-            <h4 className={classes.logoText}>Chehra.ai</h4>
-          </div>
+          <Logo/>
           <h3 className={`${classes.authenticationTitle} mt-large`}>
             Let's sculpt some digital divas 💁🏻‍♀️🙋🏼‍♂️
           </h3>

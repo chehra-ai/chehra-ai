@@ -1,0 +1,12 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.navCTA {
+    display: flex;
+    align-items: center;
+}

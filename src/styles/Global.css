@@ -4,9 +4,9 @@
 /* Variable Declaration */
 :root {
   /* Brand Scheme */
-  --color-primary: #9b91fa;
-  --color-tertiary: #e9e6ff;
-  --color-purple: #4C4787;
+  --color-primary: #4C4787;
+  --color-tertiary: #b3a7ff;
+  --color-secondary: #101010;
 
   /* Secondary Color */
   --color-white: #ffffff;
