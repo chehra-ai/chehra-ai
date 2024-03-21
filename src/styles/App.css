@@ -1,5 +1,4 @@
 .App {
-    background-color: var(--color-secondary);
     height: 100vh;
     overflow-y: hidden;
 }
@@ -9,7 +8,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: var(--color-white);
     padding: 0rem 7rem;
 }
 
@@ -18,12 +16,10 @@
 }
 
 .landingText h1{
-    color: var(--color-white);
     text-align: center;
 }
 
 .landingText h2 {
-    color: var(--color-tertiary);
     text-align: center;
 }
 

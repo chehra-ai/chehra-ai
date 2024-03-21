@@ -14,7 +14,7 @@ const Authentication = () => {
       </div>
       {/* Right Container */}
       <div className={classes.authRight}>
-        <div className={classes.authFormContainer}>
+        <div className={`${classes.authFormContainer} bg-white`}>
           <Logo/>
           <h3 className={`${classes.authenticationTitle} mt-large`}>
             Let's sculpt some digital divas 💁🏻‍♀️🙋🏼‍♂️

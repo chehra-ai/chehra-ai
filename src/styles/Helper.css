@@ -78,3 +78,45 @@
 .mr-large {
     margin-right: 4rem;
 }
+
+/* Color Helpers */
+
+.bg-p {
+    background-color: var(--color-primary);
+}
+
+.text-p {
+    color: var(--color-primary);
+}
+
+.bg-sec {
+    background-color: var(--color-secondary);
+}
+
+.text-sec {
+    color: var(--color-secondary);
+}
+
+.bg-ter {
+    background-color: var(--color-tertiary);
+}
+
+.text-ter {
+    color: var(--color-tertiary);
+}
+
+.bg-white {
+    background-color: var(--color-white);
+}
+
+.text-white {
+    color: var(--color-white);
+}
+
+.bg-black {
+    background-color: var(--color-black);
+}
+
+.text-black {
+    color: var(--color-black);
+}

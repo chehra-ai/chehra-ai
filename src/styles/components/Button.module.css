@@ -12,16 +12,6 @@
     cursor: pointer;
 }
 
-.buttonLight {
-    background-color: var(--color-white);
-    color: var(--color-secondary);
-}
-
-.buttonDark {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
 .button > p {
     margin: 0;
     font-weight: 500;

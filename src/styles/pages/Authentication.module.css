@@ -30,7 +30,6 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--color-white);
     width: 80%;
     height: 70%;
     border-radius: 0.4rem;
