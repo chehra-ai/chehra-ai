@@ -19,7 +19,7 @@ function App() {
         <div className="landingButton">
           <Button buttonText="Get Started 📍" isDark={false} />
         </div>
-        <img src="5957516.png" alt="landing" />
+        <img src="5957993.png" alt="landing" />
       </div>
     </div>
   );
