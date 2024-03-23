@@ -40,7 +40,7 @@
 }
 
 .mb-medium {
-    margin-bottom: 1.2rem;
+    margin-bottom: 2.2rem;
 }
 
 .mb-large {
@@ -119,4 +119,20 @@
 
 .text-black {
     color: var(--color-black);
+}
+
+.bg-grey {
+    background-color: var(--color-grey);
+}
+
+.text-grey {
+    color: var(--color-grey);
+}
+
+.bg-dark-grey {
+    background-color: var(--color-dark-grey);
+}
+
+.text-dark-grey {
+    color: var(--color-dark-grey);
 }

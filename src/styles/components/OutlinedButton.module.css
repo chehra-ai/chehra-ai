@@ -1,0 +1,22 @@
+.button {
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1.4rem 0;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button > p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.buttonDark {
+    border: 2px solid var(--color-primary);
+}
