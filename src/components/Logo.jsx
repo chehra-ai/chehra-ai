@@ -5,7 +5,7 @@ const Logo = ({isDark = true}) => {
   return (
     <div className={classes.logoDiv}>
       <img src="/logo.png" className={classes.img} alt="Chehra.ai Logo" />
-      <h4 className={`${isDark ? classes.logoDark : classes.logoLight} ${classes.logoText}`}>Chehra.ai</h4>
+      <h4 className={`${isDark ? "text-p" : "text-white"} ${classes.logoText}`}>Chehra.ai</h4>
     </div>
   );
 };

@@ -5,7 +5,7 @@ const Button = ({ buttonText, isDark = true }) => {
   return (
     <div
       className={`${classes.button} ${
-        isDark ? classes.buttonDark : classes.buttonLight
+        isDark ? "bg-p text-white" : "bg-white text-sec"
       }`}
     >
       <p>{buttonText}</p>

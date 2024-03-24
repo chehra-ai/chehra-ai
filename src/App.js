@@ -3,12 +3,12 @@ import "./styles/App.css";
 import Navigation from "components/Navigation";
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-sec">
       <Navigation />
-      <div className="landingDiv">
+      <div className="landingDiv text-white">
         <div className="landingText">
-          <h1>Revolutionizing</h1>
-          <h2>Influencers with AI</h2>
+          <h1 className="text-white">Revolutionizing</h1>
+          <h2 className="text-ter">Influencers with AI</h2>
         </div>
         
         <p className="landingPara">
@@ -19,7 +19,7 @@ function App() {
         <div className="landingButton">
           <Button buttonText="Get Started 📍" isDark={false} />
         </div>
-        <img src="5957516.png" alt="landing" />
+        <img src="5957993.png" alt="landing" />
       </div>
     </div>
   );

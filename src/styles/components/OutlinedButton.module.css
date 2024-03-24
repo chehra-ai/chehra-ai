@@ -16,3 +16,8 @@
     margin: 0;
     font-weight: 500;
 }
+
+.buttonDark {
+    background-color: var(--color-tertiary);
+    border: 2px solid var(--color-primary);
+}

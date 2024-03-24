@@ -40,7 +40,7 @@
 }
 
 .mb-medium {
-    margin-bottom: 1.2rem;
+    margin-bottom: 2.2rem;
 }
 
 .mb-large {
@@ -77,4 +77,62 @@
 
 .mr-large {
     margin-right: 4rem;
+}
+
+/* Color Helpers */
+
+.bg-p {
+    background-color: var(--color-primary);
+}
+
+.text-p {
+    color: var(--color-primary);
+}
+
+.bg-sec {
+    background-color: var(--color-secondary);
+}
+
+.text-sec {
+    color: var(--color-secondary);
+}
+
+.bg-ter {
+    background-color: var(--color-tertiary);
+}
+
+.text-ter {
+    color: var(--color-tertiary);
+}
+
+.bg-white {
+    background-color: var(--color-white);
+}
+
+.text-white {
+    color: var(--color-white);
+}
+
+.bg-black {
+    background-color: var(--color-black);
+}
+
+.text-black {
+    color: var(--color-black);
+}
+
+.bg-grey {
+    background-color: var(--color-grey);
+}
+
+.text-grey {
+    color: var(--color-grey);
+}
+
+.bg-dark-grey {
+    background-color: var(--color-dark-grey);
+}
+
+.text-dark-grey {
+    color: var(--color-dark-grey);
 }

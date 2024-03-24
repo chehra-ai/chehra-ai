@@ -9,9 +9,7 @@
 .label {
     font-size: 1.3rem;
     font-weight: 500;
-    color: var(--color-black);
     line-height: 1;
-    
 }
 
 .input {

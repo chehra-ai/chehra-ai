@@ -25,12 +25,13 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding: 10rem 0rem 10rem 5rem;
+  overflow-y: hidden;
 }
 .authFormContainer {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--color-white);
     width: 80%;
     height: 70%;
     border-radius: 0.4rem;
@@ -45,6 +46,7 @@
 
 .marketingContainer {
   min-width: 80%;
+  overflow-y: hidden;
   /* padding: 4rem 6rem 0rem 6rem; */
 }
 .marketingContainer > img {
