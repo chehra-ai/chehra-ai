@@ -4,6 +4,7 @@ import App from "./App";
 import Authentication from "pages/Authentication";
 import Pricing from "pages/Pricing";
 import Create from  "pages/Create";
+import Page404 from "pages/Page404";
 
 // Router configuration
 const router = createBrowserRouter([
@@ -21,6 +22,9 @@ const router = createBrowserRouter([
   }, {
     path: "/create",
     element: <Create/>
+  },{
+    path : "*",
+    element : <Page404/>
   }
 ]);
 
