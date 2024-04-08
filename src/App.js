@@ -1,6 +1,7 @@
 import Button from "components/Button";
 import "./styles/App.css";
 import Navigation from "components/Navigation";
+import { Link } from "react-router-dom";
 function App() {
   return (
     <div className="App bg-sec">
@@ -17,7 +18,9 @@ function App() {
           et viverra justo commodo.
         </p>
         <div className="landingButton">
-          <Button buttonText="Get Started 📍" isDark={false} />
+         <Link to="/authentication">
+         <Button buttonText="Get Started 📍" isDark={false} />
+         </Link>
         </div>
         <img src="5957993.png" alt="landing" />
       </div>
