@@ -1,0 +1,11 @@
+.Nav-Ctn{
+    display: flex;
+}
+.btn-ctn{
+    display: flex;
+    margin-left: 35vh;
+}
+.Nav-Ctn .btn-ctn .btn{
+    margin-top: 0;
+    margin-left: 1vh;
+}
