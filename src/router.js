@@ -8,6 +8,9 @@ import Page404 from "pages/Page404";
 import ViewInfluencer from "influencerGeneratorPages/ViewInfluencer";
 import CreateInfluencer from "influencerGeneratorPages/CreateInfluencer";
 import CreateSameInfluencerImage from "influencerGeneratorPages/CreateSameInfluencerImage";
+import SignUp from "authentication/SignUp";
+import SignIn from "authentication/SignIn";
+
 
 // Router configuration
 const router = createBrowserRouter([
@@ -37,6 +40,14 @@ const router = createBrowserRouter([
   {
     path : "/createimageofsameinfluencer",
     element : <CreateSameInfluencerImage/>
+  },
+  {
+    path : "/signup",
+    element : <SignUp/>
+  },
+  {
+    path : "/signin",
+    element : <SignIn/>
   },
   {
     path : "*",
