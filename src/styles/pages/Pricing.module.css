@@ -3,10 +3,11 @@
 }
 
 .image_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 1rem 25rem;
-  grid-gap: 4rem;
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  justify-content: center;
+  padding: 1rem;
+  grid-gap: 20rem;
 }
 
 .images {

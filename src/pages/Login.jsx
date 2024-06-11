@@ -1,10 +1,10 @@
 import React from "react";
 import classes from "styles/pages/Authentication.module.css";
-import TextInput from "components/TextInput";
-import Button from "components/Button";
 import Logo from "components/Logo";
+import ManageLogin from "components/auth/ManageLogin";
 
-const Authentication = () => {
+const Login = () => {
+
   return (
     <div className={classes.auth}>
       {/* Left Container */}
@@ -19,7 +19,7 @@ const Authentication = () => {
             aliquid fugiat, exercitationem architecto ea id vero temporibus
             soluta sunt autem quo.
           </p>
-          <img className="mt-medium" src="/5957993.png"/>
+          <img className="mt-medium" src="/5957993.png" />
         </div>
       </div>
       {/* Right Container */}
@@ -33,16 +33,11 @@ const Authentication = () => {
             Ah, greetings, influencer in the making! Step into the realm of
             Chehra.ai and let your creativity run wild!
           </p>
-          <div className={classes.authForm}>
-            <TextInput label="Email Address" placeholder="Enter email" />
-            <TextInput label="Password" placeholder="Enter password" />
-            <Button buttonText="Login" />
-          </div>
-          {/* Social Login */}
+          <ManageLogin/>
         </div>
       </div>
     </div>
   );
 };
 
-export default Authentication;
+export default Login;

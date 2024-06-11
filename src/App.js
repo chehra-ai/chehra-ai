@@ -17,7 +17,7 @@ function App() {
           et viverra justo commodo.
         </p>
         <div className="landingButton">
-          <Button buttonText="Get Started 📍" isDark={false} />
+          <Button buttonText="Get Started 📍" isDark={false} url="/signup" />
         </div>
         <img src="5957993.png" alt="landing" />
       </div>

@@ -92,8 +92,9 @@ h6 {
 }
 
 a {
-  color: inherit;
+  /* color: inherit; */
   text-decoration: none;
+  color: var(--color-tertiary);
 }
 
 /* A elements that don't have a class get default styles */
