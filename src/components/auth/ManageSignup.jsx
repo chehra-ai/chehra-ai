@@ -5,13 +5,17 @@ import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import ClickButton from "components/ClickButton";
 import { Link, useNavigate } from "react-router-dom";
-import { getDatabase, ref, set } from 'firebase/database';
+import { getDatabase, ref, set } from "firebase/database";
+import { useDispatch } from "react-redux";
+import { login } from "store/authSlice";
 
 const ManageAuth = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -22,15 +26,23 @@ const ManageAuth = () => {
         password
       );
       const user = userCredential.user;
-      console.log(user);
 
       // Get a reference to the database service
       const db = getDatabase();
+      let payload = {
+        uid: user.uid,
+        refreshToken: user.stsTokenManager.refreshToken,
+        accessToken: user.stsTokenManager.accessToken,
+        email: user.email,
+        expirationTime: user.stsTokenManager.expirationTime,
+        name: name,
+      };
       const userRef = ref(db, "users/" + user.uid);
 
       await set(userRef, {
         name: name,
       });
+      dispatch(login(payload));
       navigate("/pricing");
     } catch (error) {
       const errorCode = error.code;

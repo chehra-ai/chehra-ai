@@ -6,11 +6,14 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import ClickButton from "components/ClickButton";
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { login } from "store/authSlice";
 
 const ManageAuth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -18,7 +21,15 @@ const ManageAuth = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
+        let payload = {
+          uid: user.uid,
+          refreshToken: user.stsTokenManager.refreshToken,
+          accessToken: user.stsTokenManager.accessToken,
+          email: user.email,
+          expirationTime: user.stsTokenManager.expirationTime,
+          name: "Unknown",
+        };
+        dispatch(login(payload));
         navigate("/pricing");
       })
       .catch((error) => {
