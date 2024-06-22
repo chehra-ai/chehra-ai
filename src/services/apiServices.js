@@ -1,7 +1,7 @@
 import app from "../firebase";
 import axios from "axios";
-import { getDatabase } from "firebase/database";
-import { collection, addDoc } from "firebase/firestore";
+import { get, getDatabase, ref, update, set } from "firebase/database";
+import { arrayUnion } from "firebase/firestore";
 import { useSelector } from "react-redux";
 
 const API_BASE_URL = "http://48.216.218.6:3000";
@@ -39,16 +39,25 @@ export const useApiService = () => {
     try {
       const response = await newInfluencer({ prompt: data, useruid: useruid });
       let influencerId = response.influencer_id;
+      let image_url = response.image_url;
+
+      let imageIdToAdd = image_url.split("/display/")[1];
       let influencerToAdd = {
         influencer_id: influencerId,
-        images: [],
+        images: [imageIdToAdd],
       };
       const db = getDatabase(app);
       // Append the influencer id to the particular user's list of influencers
-      const docRef = await db.collection("users").doc(useruid);
-      docRef.update({
-        influencers: firebase.firestore.FieldValue.arrayUnion(influencerToAdd),
-      });
+      const userRef = ref(db, "users/" + useruid + "/influencers");
+
+      const snapshot = await get(userRef);
+
+      if (snapshot.exists()) {
+        await update(userRef, arrayUnion(influencerToAdd));
+      } else {
+        await set(userRef, [influencerToAdd]);
+      }
+
       return true;
     } catch (err) {
       console.error(err);
@@ -59,7 +68,7 @@ export const useApiService = () => {
   const createImage = async ({ prompt, influencerId }) => {
     try {
       const response = await newImage({
-        prompt: data,
+        prompt: prompt,
         influencerId: influencerId,
       });
       let image_url = response.image_url;
@@ -81,7 +90,7 @@ export const useApiService = () => {
         }
         return influencer;
       });
-      await userRef.update({
+      await docRef.update({
         influencers: updatedInfluencers,
       });
       return true;

@@ -42,9 +42,10 @@ const ManageAuth = () => {
 
       await set(userRef, {
         name: name,
+        influencers: []
       });
       dispatch(login(payload));
-      navigate("/pricing");
+      navigate("/create");
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
