@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getDatabase, ref, set } from "firebase/database";
 import { useDispatch } from "react-redux";
 import { login } from "store/authSlice";
+import { showLoader, hideLoader } from "store/loaderSlice";
 
 const ManageAuth = () => {
   const [name, setName] = useState("");
@@ -18,7 +19,7 @@ const ManageAuth = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    dispatch(showLoader());
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -49,6 +50,7 @@ const ManageAuth = () => {
       const errorMessage = error.message;
       console.log(errorCode, errorMessage);
     }
+    dispatch(hideLoader());
   };
   return (
     <div>

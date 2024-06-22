@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { login } from "store/authSlice";
+import { showLoader, hideLoader } from "store/loaderSlice";
 
 const ManageAuth = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const ManageAuth = () => {
   const dispatch = useDispatch();
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    dispatch(showLoader());
     await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
@@ -37,6 +38,7 @@ const ManageAuth = () => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
+    dispatch(hideLoader());
   };
   return (
     <div>

@@ -4,7 +4,8 @@ import App from "./App";
 import Login from "pages/Login";
 import Signup from "pages/Signup";
 // import Pricing from "pages/Pricing";
-import Create from  "pages/Create";
+import Create from "pages/Create";
+import NotFound from "pages/NotFound";
 
 // Router configuration
 const router = createBrowserRouter([
@@ -23,11 +24,15 @@ const router = createBrowserRouter([
   // {
   //   path: "/pricing",
   //   element: <Pricing/>
-  // }, 
+  // },
   {
     path: "/create",
-    element: <Create/>
-  }
+    element: <Create />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ]);
 
 export default router;
