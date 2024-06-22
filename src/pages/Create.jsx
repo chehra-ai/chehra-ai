@@ -5,15 +5,20 @@ import classes from "styles/pages/Create.module.css";
 import { useApiService } from "services/apiServices";
 
 const Create = () => {
-  const { createInfluencer } = useApiService();
+  const { createInfluencer, createImage } = useApiService();
   const [prompt, setPrompt] = useState(
-    "A female influencer that looks Indian but is actually from the US wearing traditional clothes with blonde hairs."
+    "."
   );
   // use Api Service to create a new influencer
   const cI = async () => {
     let response = await createInfluencer({ prompt });
     console.log(response);
   };
+
+  const nI = async () => {
+    let response = await createImage({ prompt, influencerId: "42d7f534-c383-4df9-be69-42b4cfb2fc39" });
+    console.log(response);
+  }
 
   return (
     <div className={classes.create}>
@@ -24,7 +29,7 @@ const Create = () => {
         <h3 className="text-ter bt-small">Your Creativity - Our Algotithm</h3>
       </div>
       <div>
-        <button onClick={cI} className="btn btn-primary">
+        <button onClick={nI} className="btn btn-primary">
           Create
         </button>
       </div>

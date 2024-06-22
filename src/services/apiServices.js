@@ -53,7 +53,11 @@ export const useApiService = () => {
       const snapshot = await get(userRef);
 
       if (snapshot.exists()) {
-        await update(userRef, arrayUnion(influencerToAdd));
+        const influencers = snapshot.val();
+        const influencersArray = Object.keys(influencers).map(
+          (key) => influencers[key]
+        );
+        await set(userRef, [...influencersArray, influencerToAdd]);
       } else {
         await set(userRef, [influencerToAdd]);
       }
@@ -76,12 +80,10 @@ export const useApiService = () => {
       let imageIdToAdd = image_url.split("/display/")[1];
 
       const db = getDatabase(app);
-      const docRef = await db.collection("users").doc(useruid).get();
-      let userData = docRef.data();
+      const docRef = ref(db, "users/" + useruid + "/influencers");
 
-      const influencers = userData.influencers || [];
-
-      const updatedInfluencers = influencers.map((influencer) => {
+      const snapshot = await get(docRef);
+      const updatedInfluencers = snapshot.val().map((influencer) => {
         if (influencer.influencer_id === influencerId) {
           return {
             ...influencer,
@@ -90,9 +92,12 @@ export const useApiService = () => {
         }
         return influencer;
       });
-      await docRef.update({
-        influencers: updatedInfluencers,
-      });
+      // Construct the update object
+      const updateObject = {};
+      updateObject[`users/${useruid}/influencers`] = updatedInfluencers;
+
+      // Update the influencers array in Firebase
+      await update(ref(db), updateObject);
       return true;
     } catch (err) {
       console.error(err);
