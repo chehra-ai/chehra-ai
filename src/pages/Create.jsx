@@ -1,24 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navigation from "components/Navigation";
 import classes from "styles/pages/Create.module.css";
-// import { IoMdAddCircle } from "react-icons/io";
 import { useApiService } from "services/apiServices";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import LongTextInput from "components/LongTextInput";
+import ClickButton from "components/ClickButton";
+import { useDispatch } from "react-redux";
+import { showLoader, hideLoader } from "store/loaderSlice";
 
 const Create = () => {
   const { createInfluencer, createImage } = useApiService();
-  const [prompt, setPrompt] = useState(
-    "."
-  );
-  // use Api Service to create a new influencer
+  const [prompt, setPrompt] = useState("");
+  const [uid, setUid] = useState(null);
+  const [influencerImage, setInfluencerImage] = useState(null);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUid(user.uid);
+      }
+    });
+
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, []);
+
   const cI = async () => {
-    let response = await createInfluencer({ prompt });
-    console.log(response);
+    dispatch(showLoader());
+    if (uid) {
+      let response = await createInfluencer({ prompt, uid });
+      setInfluencerImage(response);
+    } else {
+      console.log("User is not logged in.");
+      setInfluencerImage(null);
+    }
+    dispatch(hideLoader());
   };
 
-  const nI = async () => {
-    let response = await createImage({ prompt, influencerId: "42d7f534-c383-4df9-be69-42b4cfb2fc39" });
-    console.log(response);
-  }
+  // const nI = async () => {
+  //   if (uid) {
+  //     let response = await createImage({
+  //       prompt,
+  //       influencerId: "42d7f534-c383-4df9-be69-42b4cfb2fc39",
+  //     });
+  //     console.log(response);
+  //   } else {
+  //     console.log("User is not logged in.");
+  //   }
+  // };
 
   return (
     <div className={classes.create}>
@@ -29,54 +59,23 @@ const Create = () => {
         <h3 className="text-ter bt-small">Your Creativity - Our Algotithm</h3>
       </div>
       <div>
-        <button onClick={nI} className="btn btn-primary">
-          Create
-        </button>
+        <LongTextInput
+          setFunction={setPrompt}
+          value={prompt}
+          placeholder={"Let the creativity run wild."}
+        />
+        
+        <div className={classes.buttonContainer}>
+          <ClickButton
+            handler={cI}
+            isDark={true}
+            buttonText="Create Influencer"
+          />
+        </div>
+        {influencerImage && (<div className={classes.imgContainer}>
+          <img src={influencerImage}/>
+        </div>)}
       </div>
-      {/* <div className={`${classes.action_items}`}>
-        <div className={`${classes.create_button}`}>
-          <IoMdAddCircle />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/1.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/2.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/3.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/4.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/5.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/6.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/7.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/8.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/9.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/10.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/11.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/12.jpeg" />
-        </div>
-        <div>
-          <img className={classes.action_img} src="/work/13.jpeg" />
-        </div>
-      </div> */}
     </div>
   );
 };

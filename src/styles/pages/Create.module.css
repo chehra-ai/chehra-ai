@@ -42,3 +42,29 @@
   color: var(--color-white);
   cursor: pointer;
 }
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width of the container */
+  margin: 10px 0; /* Add some margin for spacing */
+}
+
+.buttonContainer > div {
+  width: auto; /* Ensure the button takes only as much width as needed */
+  max-width: 200px; /* Set a max-width to the button, adjust as needed */
+  padding: 10px 20px; /* Add padding to the button for better appearance */
+  color: white; /* Example text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}

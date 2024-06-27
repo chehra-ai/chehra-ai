@@ -5,7 +5,7 @@ import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import ClickButton from "components/ClickButton";
 import { Link, useNavigate } from "react-router-dom";
-import { getDatabase, ref, set } from "firebase/database";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { login } from "store/authSlice";
 import { showLoader, hideLoader } from "store/loaderSlice";
@@ -21,15 +21,11 @@ const ManageAuth = () => {
     e.preventDefault();
     dispatch(showLoader());
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-
-      // Get a reference to the database service
-      const db = getDatabase();
+  
+      // Initialize Firestore
+      const db = getFirestore();
       let payload = {
         uid: user.uid,
         refreshToken: user.stsTokenManager.refreshToken,
@@ -38,11 +34,11 @@ const ManageAuth = () => {
         expirationTime: user.stsTokenManager.expirationTime,
         name: name,
       };
-      const userRef = ref(db, "users/" + user.uid);
-
-      await set(userRef, {
+      const userDocRef = doc(db, "users", user.uid);
+  
+      await setDoc(userDocRef, {
         name: name,
-        influencers: []
+        influencers: {}
       });
       dispatch(login(payload));
       navigate("/create");

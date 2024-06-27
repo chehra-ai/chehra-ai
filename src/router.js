@@ -6,6 +6,7 @@ import Signup from "pages/Signup";
 // import Pricing from "pages/Pricing";
 import Create from "pages/Create";
 import NotFound from "pages/NotFound";
+import ProtectedRoute from "components/auth/ProtectedRoute";
 
 // Router configuration
 const router = createBrowserRouter([
@@ -26,8 +27,12 @@ const router = createBrowserRouter([
   //   element: <Pricing/>
   // },
   {
-    path: "/create",
-    element: <Create />,
+    path: '/create',
+    element: (
+      <ProtectedRoute>
+        <Create />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "*",

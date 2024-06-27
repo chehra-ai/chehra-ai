@@ -6,7 +6,7 @@ const ClickButton = ({ buttonText, handler, isDark = true, url = false }) => {
       <div
         onClick={handler}
         className={`${classes.button} ${
-          isDark ? "bg-p text-white" : "bg-white text-sec"
+          isDark ? "bg-ter text-white" : "bg-white text-sec"
         }`}
       >
         <p>{buttonText}</p>
