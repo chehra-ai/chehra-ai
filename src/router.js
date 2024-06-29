@@ -5,6 +5,7 @@ import Login from "pages/Login";
 import Signup from "pages/Signup";
 // import Pricing from "pages/Pricing";
 import Create from "pages/Create";
+import Image from "pages/Image";  // Import the Image component
 import NotFound from "pages/NotFound";
 import ProtectedRoute from "components/auth/ProtectedRoute";
 
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <Create />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/image/:id',  // Add this route
+    element: (
+      <ProtectedRoute>
+        <Image />
       </ProtectedRoute>
     ),
   },

@@ -21,15 +21,17 @@ export const newInfluencer = async ({ prompt, uid }) => {
     console.log("Response Headers:", response.headers);
     return response.data;
   } catch (err) {
-    console.error("Error Details:", err.response);
+    console.error("Error Details:", err.response ? err.response.data : err.message);
+    throw new Error(err.response ? err.response.data.error : err.message);
   }
 };
 
-export const newImage = async ({ prompt, influencerId }) => {
+export const newImage = async ({ prompt, influencerId, uid }) => {
   try {
     const formData = new FormData();
     formData.append("prompt", prompt);
     formData.append("influencer_id", influencerId);
+    formData.append("uid", uid);
 
     let response = await axios.post(`${API_BASE_URL}/img`, formData, {
       headers: {
@@ -41,7 +43,8 @@ export const newImage = async ({ prompt, influencerId }) => {
     console.log("Response Headers:", response.headers);
     return response.data;
   } catch (err) {
-    console.error("Error Details:", err.response);
+    console.error("Error Details:", err.response ? err.response.data : err.message);
+    throw new Error(err.response ? err.response.data.error : err.message);
   }
 };
 
@@ -55,43 +58,25 @@ export const useApiService = () => {
       let influencerId = response.influencer_id;
       let image_id = response.image_url;
 
-      return `${API_BASE_URL}/display/${image_id}`;
-      
+      return `${influencerId}`;
     } catch (err) {
+      console.error("Error creating influencer:", err.message);
       return null;
     }
   };
 
-  const createImage = async ({ prompt, influencerId }) => {
+  const createImage = async ({ prompt, influencerId, uid }) => {
     try {
       const response = await newImage({
         prompt: prompt,
         influencerId: influencerId,
+        uid: uid,
       });
       let image_url = response.image_url;
-
-      let imageIdToAdd = image_url.split("/display/")[1];
-
-      const db = getDatabase(app);
-      const docRef = ref(db, "users/" + useruid + "/influencers");
-
-      const snapshot = await get(docRef);
-      const updatedInfluencers = snapshot.val().map((influencer) => {
-        if (influencer.influencer_id === influencerId) {
-          return {
-            ...influencer,
-            images: [...influencer.images, imageIdToAdd],
-          };
-        }
-        return influencer;
-      });
-      const updateObject = {};
-      updateObject[`users/${useruid}/influencers`] = updatedInfluencers;
-
-      await update(ref(db), updateObject);
-      return true;
+      if(image_url){
+      return true;}
     } catch (err) {
-      console.error(err);
+      console.error("Error creating image:", err.message);
       return false;
     }
   };

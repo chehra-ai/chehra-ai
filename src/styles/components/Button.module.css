@@ -10,9 +10,15 @@
     margin: 1.4rem 0;
     transition-duration: 0.4s;
     cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
 
 .button > p {
     margin: 0;
     font-weight: 500;
+}
+
+.button:hover{
+    background-color: var(--color-tertiary);
 }

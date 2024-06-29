@@ -8,7 +8,7 @@ const Button = ({ buttonText, isDark = true, url = false }) => {
     <Link to={url}>
       <div
         className={`${classes.button} ${
-          isDark ? "bg-p text-white" : "bg-white text-sec"
+          isDark ? "text-white" : "text-sec"
         }`}
       >
         <p>{buttonText}</p>

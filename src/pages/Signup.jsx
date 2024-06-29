@@ -25,7 +25,7 @@ const Signup = () => {
       {/* Right Container */}
       <div className={classes.authRight}>
         <div className={`${classes.authFormContainer} bg-white`}>
-          <Logo />
+        <div className={classes.authContent}>
           <h3 className={`${classes.authenticationTitle} mt-large`}>
             Let's sculpt some digital divas 💁🏻‍♀️🙋🏼‍♂️
           </h3>
@@ -33,6 +33,7 @@ const Signup = () => {
             Ah, greetings, influencer in the making! Step into the realm of
             Chehra.ai and let your creativity run wild!
           </p>
+          </div>
           <ManageSignup/>
         </div>
       </div>

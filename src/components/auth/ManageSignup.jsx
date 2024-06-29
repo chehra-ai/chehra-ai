@@ -9,21 +9,24 @@ import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { login } from "store/authSlice";
 import { showLoader, hideLoader } from "store/loaderSlice";
+import Modal from "components/Modal"; // Make sure you have a Modal component
 
 const ManageAuth = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null); // State to manage error message
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     dispatch(showLoader());
+    setError(null); // Clear previous error
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-  
+
       // Initialize Firestore
       const db = getFirestore();
       let payload = {
@@ -35,7 +38,7 @@ const ManageAuth = () => {
         name: name,
       };
       const userDocRef = doc(db, "users", user.uid);
-  
+
       await setDoc(userDocRef, {
         name: name,
         influencers: {}
@@ -43,12 +46,11 @@ const ManageAuth = () => {
       dispatch(login(payload));
       navigate("/create");
     } catch (error) {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
+      setError(error); // Set error message
     }
     dispatch(hideLoader());
   };
+
   return (
     <div>
       <div className={classes.authForm}>
@@ -78,7 +80,8 @@ const ManageAuth = () => {
           <span>Sign in</span>
         </Link>
       </p>
-      {/* Social Login */}
+      {/* Render the modal if there's an error */}
+      {error && <Modal message={error} onClose={() => setError(null)} />}
     </div>
   );
 };
