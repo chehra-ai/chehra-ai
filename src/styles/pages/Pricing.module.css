@@ -1,5 +1,10 @@
 .pricing_header {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .image_container {
@@ -27,6 +32,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+
 }
 
 .price_div {
@@ -92,5 +99,9 @@
 
 .pricing_text {
     width: 60%;
-    margin: 2.5rem auto;
 }
+
+/* .free{
+  text-align: center;
+  width: 100px;
+} */

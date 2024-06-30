@@ -1,9 +1,11 @@
 .App {
-    height: 100vh;
-    overflow-y: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .landingDiv {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +17,7 @@
     margin: 9rem 0 1rem 0;
 }
 
-.landingText h1{
+.landingText h1 {
     text-align: center;
 }
 
@@ -27,4 +29,9 @@
     text-align: center;
     margin: 2rem 0;
     width: 50%;
+}
+
+.landingImage {
+    max-width: 100%;
+    height: auto;
 }

@@ -10,3 +10,27 @@
     display: flex;
     align-items: center;
 }
+
+.navCTA .button {
+    margin-right: 30px;
+}
+
+.credits {
+    color: var(--color-white);
+    margin-right: 10px;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+    display: flex; /* Ensure it displays as flex */
+    align-items: center; /* Align items center vertically */
+}
+
+.credits span {
+    color: var(--color-tertiary);
+    margin-left: 5px; /* Adjust margin for spacing */
+}
+.buttonGroup {
+    display: flex;
+    gap: 20px; /* Adjust the gap as needed */
+  }
+  
+  

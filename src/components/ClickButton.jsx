@@ -5,7 +5,7 @@ const ClickButton = ({ buttonText, handler, isDark = true, url = false }) => {
   return (
       <div
         onClick={handler}
-        className={`${classes.button} ${
+        className={`${classes.button2} ${
           isDark ? "bg-ter text-white" : "bg-white text-sec"
         }`}
       >

@@ -14,10 +14,7 @@ const Signup = () => {
           <h2 className="text-ter">Cultivate.</h2>
           <h2 className="text-white">Inspire.</h2>
           <p className="mt-large text-white">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus
-            cupiditate aspernatur hic quidem amet accusantium aperiam eum aut,
-            aliquid fugiat, exercitationem architecto ea id vero temporibus
-            soluta sunt autem quo.
+          We help you make your own virtual influencers, grow their accounts and get brand deals!
           </p>
           <img className="mt-medium" src="/5957993.png" />
         </div>

@@ -5,31 +5,30 @@ import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import ClickButton from "components/ClickButton";
 import { Link, useNavigate } from "react-router-dom";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, setDoc, Timestamp } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { login } from "store/authSlice";
 import { showLoader, hideLoader } from "store/loaderSlice";
-import Modal from "components/Modal"; // Make sure you have a Modal component
+import Modal from "components/Modal";
 
 const ManageAuth = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null); // State to manage error message
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     dispatch(showLoader());
-    setError(null); // Clear previous error
+    setError(null);
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Initialize Firestore
       const db = getFirestore();
-      let payload = {
+      const payload = {
         uid: user.uid,
         refreshToken: user.stsTokenManager.refreshToken,
         accessToken: user.stsTokenManager.accessToken,
@@ -41,12 +40,15 @@ const ManageAuth = () => {
 
       await setDoc(userDocRef, {
         name: name,
-        influencers: {}
+        influencers: {},
+        credits: 100,
+        plan: 'free',
+        lastRechargeTime: Timestamp.now(), // Add the current timestamp
       });
       dispatch(login(payload));
-      navigate("/create");
+      navigate("/pricing");
     } catch (error) {
-      setError(error); // Set error message
+      setError(error);
     }
     dispatch(hideLoader());
   };
@@ -80,7 +82,6 @@ const ManageAuth = () => {
           <span>Sign in</span>
         </Link>
       </p>
-      {/* Render the modal if there's an error */}
       {error && <Modal message={error} onClose={() => setError(null)} />}
     </div>
   );

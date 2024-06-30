@@ -83,6 +83,13 @@
   color: #fff;
 }
 
+.generate_image_form .button_group {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 80%; /* Match textarea width */
+}
+
 .generate_image_form button {
   background-color: #4C4787;
   color: #fff;
@@ -96,6 +103,12 @@
 .generate_image_form button:hover {
   background-color: #b3a7ff;
 }
+
+.delete_button {
+  background-color: #FF5252; /* Red color for delete button */
+  margin-left: 10px; /* Adjust spacing */
+}
+
 .loader {
   position: fixed;
   top: 0;

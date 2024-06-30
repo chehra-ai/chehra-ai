@@ -73,11 +73,11 @@ export const useApiService = () => {
         uid: uid,
       });
       let image_url = response.image_url;
-      if(image_url){
-      return true;}
+      if (image_url) {
+        return true;
+      }
     } catch (err) {
-      console.error("Error creating image:", err.message);
-      return false;
+      return { message: "Error creating image: " + err.message };
     }
   };
 

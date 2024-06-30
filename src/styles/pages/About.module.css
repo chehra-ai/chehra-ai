@@ -1,0 +1,215 @@
+.create_div {
+    padding: 4rem 4rem;
+    text-align: center;
+  }
+  
+  .action_items {
+    display: grid;
+    padding: 2rem 4rem 4rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+  }
+  
+  .header_img {
+    width: 70%;
+    margin: 1rem auto;
+  }
+  
+  .action_items > div {
+    height: 25rem;
+  }
+  
+  .action_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    -webkit-box-shadow: 2px 0px 124px -94px rgba(217, 217, 217, 1);
+    -moz-box-shadow: 2px 0px 124px -94px rgba(217, 217, 217, 1);
+    box-shadow: 2px 0px 124px -94px rgba(217, 217, 217, 1);
+  }
+  
+  .create_button {
+    border: 2px solid var(--color-tertiary);
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: var(--color-white);
+    cursor: pointer;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width of the container */
+    margin: 10px 0; /* Add some margin for spacing */
+  }
+  
+  .buttonContainer > div {
+    width: auto; /* Ensure the button takes only as much width as needed */
+    max-width: 200px; /* Set a max-width to the button, adjust as needed */
+    padding: 10px 20px; /* Add padding to the button for better appearance */
+    color: white; /* Example text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  
+  .generate_image_form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .generate_image_form textarea {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--color-secondary);
+  }
+  
+  .generate_image_form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--color-tertiary);
+    color: var(--color-white);
+    transition: background-color 0.3s ease;
+  }
+  
+  .generate_image_form button:disabled {
+    background-color: var(--color-secondary);
+  }
+  
+  .images_grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .images_grid div {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border: 2px solid #4C4787;
+    border-radius: 10px;
+  }
+  
+  .images_grid img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .images_grid div:hover {
+    border: 2px solid #4C4787;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .images_grid .section {
+    color: white;
+    font-size: 20px;
+  }
+  
+  .images_grid section span {
+    color: var(--color-tertiary);
+  }
+  
+  .imgText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    background-color: #4C4787;
+    height: 50px;
+    color: var(--color-white);
+    font-size: 12px;
+  }
+  
+  .inf {
+    font-size: 40px;
+    color: var(--color-white);
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  
+  /* New styles for usage history */
+  .usageContainer {
+    margin-top: 2rem;
+    padding: 0 4rem;
+    text-align: center  ;
+  }
+  
+  .usageList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .usageItem {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: var(--color-white);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .usageTimestamp {
+    flex: 1;
+  }
+  
+  .usageAction {
+    flex: 2;
+    text-align: center;
+  }
+  
+  .usageChange {
+    flex: 1;
+    text-align: right;
+  }
+  .about{
+    text-align: center;
+    width: 100vw;
+  }
+
+  .content{
+    text-align: left;
+    padding: 1em 7em;
+    font-size: 20px;
+    min-height: 70vh;
+  }
+  .content p{
+    font-size: 20px;
+    padding: 0.5em 0;
+  }
+
+  .memberImage{
+    width: 300px;
+  }
