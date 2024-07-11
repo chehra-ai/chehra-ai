@@ -47,3 +47,13 @@
 .button2:hover{
     background-color: var(--color-tertiary);
 }
+
+.button2 {
+  /* existing styles */
+  cursor: pointer;
+}
+
+.button2.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

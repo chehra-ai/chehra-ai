@@ -213,3 +213,12 @@
   .memberImage{
     width: 300px;
   }
+
+@media (max-width: 768px) {
+ .content{
+    text-align: left;
+    padding: 1px 1em;
+    font-size: 20px;
+    min-height: 70vh;
+  }
+}

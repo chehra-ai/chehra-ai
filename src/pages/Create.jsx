@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 import { showLoader, hideLoader } from "store/loaderSlice";
 import { Timestamp } from "firebase/firestore";
 import Footer from "components/Footer";
+
 const Create = () => {
   const { createInfluencer } = useApiService();
   const [prompt, setPrompt] = useState("");
@@ -42,7 +43,7 @@ const Create = () => {
       const userDoc = await getDoc(doc(db, "users", uid));
       if (userDoc.exists()) {
         const userData = userDoc.data();
-        loadCredits(uid)
+        loadCredits(uid);
         setCredits(userData.credits);
         setPlan(userData.plan);
         loadInfluencers(uid);
@@ -53,6 +54,7 @@ const Create = () => {
       console.error("Error fetching user data: ", error);
     }
   };
+
   const loadCredits = async (uid) => {
     try {
       const userDoc = await getDoc(doc(db, "users", uid));
@@ -186,6 +188,7 @@ const Create = () => {
             handler={cI}
             isDark={true}
             buttonText={<div>Create Influencer<br></br>(20 Credits)</div>}
+            disabled={!prompt}
           />
         </div>
         <h2 className={classes.inf}>Your Influencers</h2>
@@ -197,14 +200,14 @@ const Create = () => {
         <div className={classes.images_grid}>
           {influencers.length > 0 ? influencers.map(influencer => (
             <div key={influencer.id} onClick={() => handleImageClick(influencer.id)}>
-              <img src={`http://48.216.218.6:3000/display/` + influencer.images[0].id} alt={influencer.prompt} />
+              <img src={`/api/display/` + influencer.images[0].id} alt={influencer.prompt} />
               <section className={classes.imgText}>{influencer.prompt.length > 50 ? influencer.prompt.substring(0, 54) + "..." : influencer.prompt}</section>
             </div>
           )) : <section className={classes.section}><span>No influencers</span>, write a prompt and Click <span>"Create Influencer"</span> to Create one</section>}
         </div>
       </div>
       {error && <Modal message={error} onClose={() => setError(null)} />}
-        <Footer />
+      <Footer />
     </div>
   );
 };

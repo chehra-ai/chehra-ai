@@ -26,15 +26,15 @@ function App() {
       <Navigation />
       <div className="landingDiv text-white">
         <div className="landingText">
-          <h1 className="text-white">Revolutionizing</h1>
-          <h2 className="text-ter">Influencers with AI</h2>
+          <h1 className="text-white">Create Your</h1>
+          <h2 className="text-ter">Virtual Influencer</h2>
         </div>
         
         <p className="landingPara">
           We help you make your own virtual influencers, grow their accounts and get brand deals!
         </p>
         <div className="landingButton">
-          <Button buttonText="Get Started 📍" isDark={false} url="/signup" />
+          <Button buttonText="SignUp for free" isDark={false} url="/signup" />
         </div>
         <img className="landingImage" src="5957993.png" alt="landing" />
       </div>

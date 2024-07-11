@@ -1,3 +1,4 @@
+/* Existing styles */
 .App {
     min-height: 100vh;
     display: flex;
@@ -34,4 +35,54 @@
 .landingImage {
     max-width: 100%;
     height: auto;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .landingDiv {
+        padding: 0rem 2rem;
+    }
+
+    .landingText {
+        margin: 5rem 0 0 0;
+   }
+
+    .landingText h1 {
+        font-size: 4rem; /* Adjust font size for medium screens */
+    }
+
+    .landingText h2 {
+        font-size: 3.6rem; /* Adjust font size for medium screens */
+    }
+
+    .landingPara {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .landingDiv {
+        padding: 0rem 1rem;
+    }
+
+    .landingText {
+        margin: 3rem 0 1rem 0;
+    }
+
+    .landingText h1 {
+        font-size: 4rem; /* Adjust font size for small screens */
+    }
+
+    .landingText h2 {
+        font-size: 3.6rem; /* Adjust font size for small screens */
+    }
+
+    .landingPara {
+        width: 90%;
+        font-size: 1.5rem;
+    }
+
+    .landingButton {
+        margin: 1rem 0;
+    }
 }

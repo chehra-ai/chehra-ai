@@ -105,3 +105,29 @@
   text-align: center;
   width: 100px;
 } */
+
+@media (max-width: 768px) {
+    .price_details {
+  padding: 0 3rem;
+  display: grid;
+  margin-top: 0;
+  grid-template-columns: none;
+}
+.price_div {
+  margin: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 100%;
+  -webkit-box-shadow: 2px 0px 76px -24px rgba(255, 255, 255, 0.44);
+  -moz-box-shadow: 2px 0px 76px -24px rgba(255, 255, 255, 0.419);
+  box-shadow: 2px 0px 76px -24px rgba(255, 255, 255, 0.387);
+}
+br {
+height: 0;
+display: none;
+}
+}

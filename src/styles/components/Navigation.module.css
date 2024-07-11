@@ -20,17 +20,77 @@
     margin-right: 10px;
     font-size: 17px;
     letter-spacing: 0.5px;
-    display: flex; /* Ensure it displays as flex */
-    align-items: center; /* Align items center vertically */
+    display: flex;
+    align-items: center;
 }
 
 .credits span {
     color: var(--color-tertiary);
-    margin-left: 5px; /* Adjust margin for spacing */
+    margin-left: 5px;
 }
+
 .buttonGroup {
     display: flex;
-    gap: 20px; /* Adjust the gap as needed */
-  }
-  
-  
+    gap: 20px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    padding: 7px 12px;
+    border-radius: 5px;
+    z-index: 500
+}
+
+@media (max-width: 768px) {
+    .navBar {
+        padding: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navCTA {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 100%;
+        background-color: var(--color-primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+	z-index: 300;
+    }
+
+    .navCTA.active {
+        right: 0;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+       /* Adjusted gap for mobile */
+        width: 80%;
+        text-align: center;
+	z-index: 360;    
+}
+
+    .credits {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .navCTA .button {
+        margin-right: 0;
+        width: 80%;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}

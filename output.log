@@ -1,0 +1,39 @@
+nohup: ignoring input
+ INFO  Accepting connections at http://localhost:2990
+ HTTP  6/30/2024 11:11:16 PM 127.0.0.1 GET /
+ HTTP  6/30/2024 11:11:16 PM 127.0.0.1 Returned 200 in 16 ms
+ HTTP  6/30/2024 11:11:27 PM 127.0.0.1 GET /create
+ HTTP  6/30/2024 11:11:27 PM 127.0.0.1 Returned 200 in 2 ms
+ HTTP  6/30/2024 11:11:27 PM 127.0.0.1 GET /static/js/main.1d29b5ce.js
+ HTTP  6/30/2024 11:11:27 PM 127.0.0.1 Returned 200 in 4 ms
+ HTTP  6/30/2024 11:11:28 PM 127.0.0.1 GET /static/css/main.0902e76d.css
+ HTTP  6/30/2024 11:11:28 PM 127.0.0.1 Returned 304 in 1 ms
+ HTTP  6/30/2024 11:11:28 PM 127.0.0.1 GET /static/css/main.0902e76d.css.map
+ HTTP  6/30/2024 11:11:28 PM 127.0.0.1 Returned 304 in 2 ms
+ HTTP  6/30/2024 11:11:29 PM 127.0.0.1 GET /static/js/main.1d29b5ce.js.map
+ HTTP  6/30/2024 11:11:29 PM 127.0.0.1 Returned 200 in 14 ms
+ HTTP  6/30/2024 11:11:29 PM 127.0.0.1 GET /logo.png
+ HTTP  6/30/2024 11:11:29 PM 127.0.0.1 Returned 304 in 1 ms
+ HTTP  6/30/2024 11:11:29 PM 127.0.0.1 GET /manifest.json
+ HTTP  6/30/2024 11:11:29 PM 127.0.0.1 Returned 304 in 1 ms
+ HTTP  6/30/2024 11:11:29 PM 127.0.0.1 GET /logo192.png
+ HTTP  6/30/2024 11:11:29 PM 127.0.0.1 Returned 304 in 1 ms
+ HTTP  6/30/2024 11:11:30 PM 127.0.0.1 GET /5576582.png
+ HTTP  6/30/2024 11:11:30 PM 127.0.0.1 Returned 304 in 1 ms
+ HTTP  6/30/2024 11:11:30 PM 127.0.0.1 GET /logo.png
+ HTTP  6/30/2024 11:11:30 PM 127.0.0.1 Returned 304 in 0 ms
+ HTTP  6/30/2024 11:11:53 PM 127.0.0.1 GET /favicon.ico
+ HTTP  6/30/2024 11:11:53 PM 127.0.0.1 Returned 200 in 1 ms
+ HTTP  6/30/2024 11:11:53 PM 127.0.0.1 GET /static/css/main.0902e76d.css.map
+ HTTP  6/30/2024 11:11:53 PM 127.0.0.1 Returned 304 in 1 ms
+ HTTP  6/30/2024 11:12:08 PM 127.0.0.1 GET /static/css/main.0902e76d.css.map
+ HTTP  6/30/2024 11:12:08 PM 127.0.0.1 Returned 304 in 1 ms
+ HTTP  6/30/2024 11:12:08 PM 127.0.0.1 GET /manifest.json
+ HTTP  6/30/2024 11:12:08 PM 127.0.0.1 Returned 304 in 0 ms
+ HTTP  6/30/2024 11:12:09 PM 127.0.0.1 GET /logo192.png
+ HTTP  6/30/2024 11:12:09 PM 127.0.0.1 Returned 304 in 1 ms
+ HTTP  6/30/2024 11:12:09 PM 127.0.0.1 GET /logo.png
+ HTTP  6/30/2024 11:12:09 PM 127.0.0.1 Returned 304 in 1 ms
+ HTTP  6/30/2024 11:12:09 PM 127.0.0.1 GET /5576582.png
+ HTTP  6/30/2024 11:12:09 PM 127.0.0.1 Returned 304 in 1 ms
+Killed

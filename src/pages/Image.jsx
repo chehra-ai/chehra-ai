@@ -86,8 +86,7 @@ const Image = () => {
     }
   };
 
-  const handleGenerateImage = async (e) => {
-    e.preventDefault();
+  const handleGenerateImage = async () => {
     setLoading(true);
     setError(null);
 
@@ -149,11 +148,11 @@ const Image = () => {
         <div className={classes.images_grid}>
           {influencer.images.map((image, index) => (
             <div key={index} className={classes.image_wrapper}>
-              <img src={`http://48.216.218.6:3000/display/${image.url}`} alt={`Influencer ${index}`} />
-              <a 
-                href={`http://48.216.218.6:3000/display/${image.url}`} 
+              <img src={`/api/display/${image.url}`} alt={`Influencer ${index}`} />
+              <a
+                href={`/api/display/${image.url}`}
                 target="_blank"
-                download={`influencer_${index}.jpg`} 
+                download={`influencer_${index}.jpg`}
                 className={classes.download_button}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -164,7 +163,7 @@ const Image = () => {
             </div>
           ))}
         </div>
-        <div className={classes.generate_image_form} onSubmit={handleGenerateImage}>
+        <div className={classes.generate_image_form}>
           <textarea
             placeholder="Enter new prompt..."
             value={newPrompt}
@@ -172,7 +171,7 @@ const Image = () => {
             required
           />
           <div className={classes.button_group}>
-            <button type="submit" disabled={loading}>
+            <button onClick={handleGenerateImage} disabled={loading}>
               {loading ? "Generating..." : <div>Generate Image<br></br>(10 Credits)</div>}
             </button>
             <button onClick={handleDelete} className={classes.delete_button}>
@@ -182,10 +181,8 @@ const Image = () => {
         </div>
         {error && <Modal message={error.message} onClose={() => setError(null)} />}
       </div>
-      
     </div>
   );
-  
 };
 
 export default Image;

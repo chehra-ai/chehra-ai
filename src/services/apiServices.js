@@ -3,7 +3,7 @@ import axios from "axios";
 import { get, getDatabase, ref, update, set } from "firebase/database";
 import { useSelector } from "react-redux";
 
-const API_BASE_URL = "http://48.216.218.6:3000";
+const API_BASE_URL = "/api";
 
 export const newInfluencer = async ({ prompt, uid }) => {
   try {

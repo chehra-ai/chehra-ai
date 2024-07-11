@@ -7,10 +7,12 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
 import ClickButton from "./ClickButton";
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navigation = () => {
   const [credits, setCredits] = useState(0);
   const [uid, setUid] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +22,6 @@ const Navigation = () => {
         setUid(user.uid);
         const userDocRef = doc(db, "users", user.uid);
 
-        // Setup real-time listener
         const unsubscribeSnapshot = onSnapshot(userDocRef, (doc) => {
           if (doc.exists()) {
             setCredits(doc.data().credits || 0);
@@ -29,7 +30,6 @@ const Navigation = () => {
           }
         });
 
-        // Cleanup snapshot listener on unmount
         return () => unsubscribeSnapshot();
       } else {
         setUid(null);
@@ -37,7 +37,6 @@ const Navigation = () => {
       }
     });
 
-    // Cleanup auth listener on unmount
     return () => unsubscribeAuth();
   }, []);
 
@@ -58,14 +57,18 @@ const Navigation = () => {
     }
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <nav className={classes.navBar}>
       <Link to="/" onClick={handleLogoClick}><Logo isDark={false} /></Link>
-      <div className={classes.navCTA}>
+      <div className={menuOpen ? `${classes.navCTA} ${classes.active}` : classes.navCTA}>
         {uid && <Link to="/credits"><div className={classes.credits}>Credits: <span>{credits}</span></div></Link>}
         {uid ? (
           <div className={classes.buttonGroup}>
-            <Button buttonText="Home" url="/create" isDark={false} />
+            <Button buttonText="Home" url="/" isDark={false} />
             <ClickButton handler={logout} buttonText="Log Out" />
           </div>
         ) : (
@@ -74,6 +77,9 @@ const Navigation = () => {
             <Button buttonText="Login" url="/login" isDark={false} />
           </div>
         )}
+      </div>
+      <div className={classes.hamburger} onClick={toggleMenu}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
     </nav>
   );
